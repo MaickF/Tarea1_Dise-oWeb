@@ -11,7 +11,7 @@ PHP
 Javascript  
 Bootstrap  
 
-4.Describa en un párrafo qué es un administrador de dependencias* (20%)
+4.Describa en un párrafo qué es un administrador de dependencias* (20%)  
 Un administrador de dependencias es una herramienta de software que ayuda a los desarrolladores a gestionar y organizar las dependencias de un proyecto. Estas   dependencias pueden ser librerías, paquetes o componentes externos que son necesarios para el correcto funcionamiento del software. Un administrador de         dependencias permite a los desarrolladores automatizar la instalación, la actualización y la gestión de estas dependencias, lo que les ahorra tiempo y           esfuerzo y les permite enfocarse en su trabajo principal. Algunos ejemplos comunes de administradores de dependencias incluyen NPM para Node.js, pip para       Python y Maven para Java (“Using Package Managers”, 2019).  
 
 5.Describa en un párrafo para qué sirve Laravel* (20%)  
