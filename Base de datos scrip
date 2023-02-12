@@ -1,0 +1,45 @@
+DROP TABLE Cuenta;
+
+DROP SEQUENCE Cuenta_AuteSEQ;
+DROP SEQUENCE Cuenta_IDSEQ;
+
+
+CREATE SEQUENCE Cuenta_AuteSEQ START WITH 0 INCREMENT BY 1;
+CREATE SEQUENCE Cuenta_IDSEQ START WITH 0 INCREMENT BY 1;
+
+CREATE TABLE Cuenta(
+     Id_Cuenta INT,
+     Nombre_Cuenta VARCHAR2(30),
+     Contrasena_Cuenta VARCHAR2(30),
+     Autenticado INT,
+     CONSTRAINT PK_Cuenta PRIMARY KEY (Id_Cuenta)
+);
+
+CREATE OR REPLACE PROCEDURE Nueva_Cuenta(Nombre_Cuenta_nueva in varchar, Contrasena_Cuenta in varchar)
+    IS
+    BEGIN   
+        insert into Provincia VALUES (Cuenta_IDSEQ.nextval, Nombre_Cuenta_nueva, Contrasena_Cuenta, Cuenta_AuteSEQ.nextval); 
+        COMMIT;
+    END;
+/
+
+CREATE OR REPLACE PROCEDURE Autenticacion_Cuenta(Intento_Nombre in varchar, Intento_Contrasena in varchar)
+    IS
+    Temp1 int := 0;
+    BEGIN 
+     DECLARE
+        CURSOR CuentaCu IS
+            SELECT
+                Nombre_Cuenta,
+                Contrasena_Cuenta
+            FROM Cuenta;
+
+    BEGIN
+        FOR i IN CuentaCu LOOP --ciclo
+            IF i.Nombre_Cuenta = Intento_Nombre AND i.Contrasena_Cuenta = Intento_Contrasena 
+			UPDATE Cuenta SET Autenticado = Cuenta_AuteSEQ.nextval WHERE Nombre_Cuenta = Intento_Nombre;	
+            END IF;
+        END LOOP;
+        COMMIT;
+    END;
+/
