@@ -1,3 +1,26 @@
+MYSQL
+
+DROP TABLE Cuenta;
+
+CREATE TABLE Cuenta(
+     Id_Cuenta INT NOT NULL AUTO_INCREMENT,
+     Nombre_Cuenta VARCHAR(30),
+     Contrasena_Cuenta VARCHAR(30),
+     Autenticado INT,
+     CONSTRAINT PK_Cuenta PRIMARY KEY (Id_Cuenta)
+);
+
+insert into cuenta (Nombre_Cuenta, Contrasena_Cuenta,Autenticado)values ('EFHIUEH','INJFEIF',1);
+insert into cuenta (Nombre_Cuenta, Contrasena_Cuenta,Autenticado)values ('EFHIUEH','INJFEIF',1);
+insert into cuenta (Nombre_Cuenta, Contrasena_Cuenta,Autenticado)values('EFHIUEH','INJFEIF',1);
+insert into cuenta (Nombre_Cuenta, Contrasena_Cuenta,Autenticado)values ('EFHIUEH','INJFEIF',1);
+
+select * from cuenta;
+
+_____________________________________________________________________________________________________________________________________________________________________
+
+Oracle
+
 DROP TABLE Cuenta;
 
 DROP SEQUENCE Cuenta_AuteSEQ;
